@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Team Fiber Fitness Studio — Official Website
 
 Modern, bold, premium, and fully responsive website for **Team Fiber Fitness Studio**, located in Kelambakkam, Chennai, Tamil Nadu.
@@ -123,7 +122,3 @@ Since this is a static website, it can be hosted for free or low-cost on any sta
 ---
 
 &copy; 2026 Team Fiber Fitness Studio. All rights reserved.
-=======
-# Team-Fiber-Gym
-Gym Website
->>>>>>> a2357ccac4a03b26acd9522cd6e5a9aa62bb7004
