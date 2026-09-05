@@ -8,24 +8,24 @@
 
 /* --- CSS Variables & Design Tokens --- */
 :root {
-  /* Color Palette */
-  --bg-primary: #0a0b0e;
-  --bg-surface: #11141b;
-  --bg-card: #171b24;
-  --bg-card-hover: #1e2430;
-  --bg-glass: rgba(17, 20, 27, 0.85);
-  --bg-glass-card: rgba(23, 27, 36, 0.7);
+  /* Color Palette - Deep Dark Surfaces */
+  --bg-primary: #07080a;
+  --bg-surface: #0e1017;
+  --bg-card: #141720;
+  --bg-card-hover: #1b202c;
+  --bg-glass: rgba(14, 16, 23, 0.88);
+  --bg-glass-card: rgba(20, 23, 32, 0.75);
 
-  /* Accents */
-  --accent-primary: #ff3823;
-  --accent-secondary: #ff6a00;
-  --accent-gradient: linear-gradient(135deg, #ff3823 0%, #ff6a00 100%);
-  --accent-gradient-hover: linear-gradient(135deg, #ff523d 0%, #ff7f24 100%);
-  --accent-glow: 0 0 25px rgba(255, 56, 35, 0.45);
-  --accent-glow-subtle: 0 0 15px rgba(255, 56, 35, 0.25);
+  /* Accents - Vibrant Athletic Yellow & Amber */
+  --accent-primary: #ffd000;
+  --accent-secondary: #ffaa00;
+  --accent-gradient: linear-gradient(135deg, #ffd000 0%, #ff9f00 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #ffe033 0%, #ffb319 100%);
+  --accent-glow: 0 0 25px rgba(255, 208, 0, 0.5);
+  --accent-glow-subtle: 0 0 15px rgba(255, 208, 0, 0.28);
   
-  --gold: #ffb703;
-  --gold-glow: 0 0 20px rgba(255, 183, 3, 0.35);
+  --gold: #ffd000;
+  --gold-glow: 0 0 20px rgba(255, 208, 0, 0.4);
 
   /* Typography Colors */
   --text-white: #f8fafc;
@@ -35,7 +35,7 @@
   /* Borders & Dividers */
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-highlight: rgba(255, 255, 255, 0.16);
-  --border-accent: rgba(255, 56, 35, 0.5);
+  --border-accent: rgba(255, 208, 0, 0.45);
 
   /* Fonts */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -83,6 +83,11 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent-primary);
+  color: #08090c;
 }
 
 img {
@@ -164,8 +169,8 @@ ul {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--accent-primary);
-  background: rgba(255, 56, 35, 0.1);
-  border: 1px solid rgba(255, 56, 35, 0.25);
+  background: rgba(255, 208, 0, 0.1);
+  border: 1px solid rgba(255, 208, 0, 0.28);
   padding: 0.35rem 1rem;
   border-radius: var(--radius-full);
   margin-bottom: 1rem;
@@ -213,14 +218,20 @@ ul {
 
 .btn-primary {
   background: var(--accent-gradient);
-  color: #ffffff;
+  color: #08090c;
+  font-weight: 800;
   box-shadow: var(--accent-glow-subtle);
 }
 
 .btn-primary:hover {
   background: var(--accent-gradient-hover);
+  color: #000000;
   box-shadow: var(--accent-glow);
   transform: translateY(-2px);
+}
+
+.btn-primary svg {
+  stroke: #08090c;
 }
 
 .btn-outline {
@@ -410,7 +421,7 @@ ul {
 }
 
 .nav-phone-btn:hover {
-  background: rgba(255, 56, 35, 0.15);
+  background: rgba(255, 208, 0, 0.15);
   border-color: var(--accent-primary);
   color: var(--accent-primary);
   transform: translateY(-1px);
@@ -497,8 +508,8 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 70% 30%, rgba(255, 56, 35, 0.15) 0%, transparent 60%),
-              linear-gradient(to bottom, rgba(10, 11, 14, 0.4) 0%, rgba(10, 11, 14, 0.85) 75%, var(--bg-primary) 100%);
+  background: radial-gradient(circle at 70% 30%, rgba(255, 208, 0, 0.12) 0%, transparent 60%),
+              linear-gradient(to bottom, rgba(7, 8, 10, 0.4) 0%, rgba(7, 8, 10, 0.88) 75%, var(--bg-primary) 100%);
   z-index: 1;
 }
 
@@ -513,8 +524,8 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(255, 56, 35, 0.15);
-  border: 1px solid rgba(255, 56, 35, 0.35);
+  background: rgba(255, 208, 0, 0.12);
+  border: 1px solid rgba(255, 208, 0, 0.35);
   padding: 0.5rem 1.25rem;
   border-radius: var(--radius-full);
   margin-bottom: 1.5rem;
@@ -684,7 +695,7 @@ ul {
 .about-badge-icon svg {
   width: 24px;
   height: 24px;
-  fill: #fff;
+  fill: #08090c;
 }
 
 .about-badge-title {
@@ -731,8 +742,8 @@ ul {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 56, 35, 0.12);
-  border: 1px solid rgba(255, 56, 35, 0.3);
+  background: rgba(255, 208, 0, 0.12);
+  border: 1px solid rgba(255, 208, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -785,7 +796,7 @@ ul {
 .program-card:hover {
   transform: translateY(-8px);
   border-color: var(--border-accent);
-  box-shadow: 0 15px 35px rgba(255, 56, 35, 0.15);
+  box-shadow: 0 15px 35px rgba(255, 208, 0, 0.15);
 }
 
 .program-card-header {
@@ -814,7 +825,7 @@ ul {
 
 .program-card:hover .program-icon-box {
   background: var(--accent-gradient);
-  color: #fff;
+  color: #08090c;
   border-color: transparent;
   box-shadow: var(--accent-glow-subtle);
 }
@@ -907,8 +918,8 @@ ul {
   width: 50px;
   height: 50px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 56, 35, 0.1);
-  border: 1px solid rgba(255, 56, 35, 0.25);
+  background: rgba(255, 208, 0, 0.1);
+  border: 1px solid rgba(255, 208, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1093,7 +1104,7 @@ ul {
   left: 50%;
   transform: translateX(-50%);
   background: var(--accent-gradient);
-  color: #fff;
+  color: #08090c;
   font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 800;
@@ -1181,8 +1192,8 @@ ul {
 }
 
 .cta-banner {
-  background: radial-gradient(circle at 100% 50%, rgba(255, 106, 0, 0.18) 0%, transparent 50%),
-              radial-gradient(circle at 0% 50%, rgba(255, 56, 35, 0.2) 0%, transparent 60%),
+  background: radial-gradient(circle at 100% 50%, rgba(255, 170, 0, 0.18) 0%, transparent 50%),
+              radial-gradient(circle at 0% 50%, rgba(255, 208, 0, 0.2) 0%, transparent 60%),
               var(--bg-card);
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-lg);
@@ -1248,10 +1259,11 @@ ul {
 }
 
 .gallery-filter-btn.active {
-  color: #fff;
+  color: #08090c;
+  font-weight: 800;
   background: var(--accent-gradient);
   border-color: transparent;
-  box-shadow: 0 4px 16px rgba(255, 56, 35, 0.35);
+  box-shadow: 0 4px 16px rgba(255, 208, 0, 0.35);
 }
 
 .gallery-grid {
@@ -1306,8 +1318,9 @@ ul {
 }
 
 .gallery-item:hover .gallery-badge {
-  background: rgba(255, 56, 35, 0.85);
-  color: #fff;
+  background: rgba(255, 208, 0, 0.9);
+  color: #08090c;
+  font-weight: 800;
   border-color: transparent;
 }
 
@@ -1432,9 +1445,9 @@ ul {
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: var(--radius-full);
-  background: rgba(255, 56, 35, 0.2);
+  background: rgba(255, 208, 0, 0.18);
   color: var(--accent-primary);
-  border: 1px solid rgba(255, 56, 35, 0.4);
+  border: 1px solid rgba(255, 208, 0, 0.4);
 }
 
 .lightbox-counter {
@@ -1448,7 +1461,7 @@ ul {
   max-width: 100%;
   max-height: 72vh;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg), 0 0 35px rgba(255, 56, 35, 0.2);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(255, 208, 0, 0.25);
   object-fit: contain;
   transition: opacity 0.25s ease;
   image-rendering: -webkit-optimize-contrast;
@@ -1482,8 +1495,13 @@ ul {
 
 .lightbox-btn:hover {
   background: var(--accent-gradient);
+  color: #08090c;
   border-color: transparent;
   transform: scale(1.1);
+}
+
+.lightbox-btn:hover svg {
+  stroke: #08090c;
 }
 
 .lightbox-close {
@@ -1668,11 +1686,11 @@ ul {
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.05rem;
-  color: #fff;
+  color: #08090c;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 208, 0, 0.3);
 }
 
 .author-title-row {
@@ -1778,8 +1796,8 @@ ul {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 56, 35, 0.1);
-  border: 1px solid rgba(255, 56, 35, 0.25);
+  background: rgba(255, 208, 0, 0.12);
+  border: 1px solid rgba(255, 208, 0, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1870,7 +1888,7 @@ ul {
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(255, 56, 35, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 208, 0, 0.2);
 }
 
 .form-textarea {
@@ -1958,9 +1976,13 @@ ul {
 
 .social-icon:hover {
   background: var(--accent-gradient);
-  color: #fff;
+  color: #08090c;
   border-color: transparent;
   transform: translateY(-3px);
+}
+
+.social-icon:hover svg {
+  stroke: #08090c;
 }
 
 .social-icon svg {
