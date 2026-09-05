@@ -211,19 +211,25 @@ function initLightbox() {
   if (!lightbox || !galleryItems.length) return;
 
   const updateLightbox = (index) => {
-    currentImageIndex = (index + GYM_CONFIG.gallery.length) % GYM_CONFIG.gallery.length;
-    const item = GYM_CONFIG.gallery[currentImageIndex];
-    if (lightboxImg) {
+    const items = document.querySelectorAll(".gallery-item");
+    if (!items.length) return;
+    currentImageIndex = (index + items.length) % items.length;
+    const currentItem = items[currentImageIndex];
+    const img = currentItem.querySelector("img");
+    const title = currentItem.querySelector(".gallery-title");
+    const subtitle = currentItem.querySelector(".gallery-subtitle");
+
+    if (lightboxImg && img) {
       lightboxImg.style.opacity = "0.3";
-      lightboxImg.src = item.src;
-      lightboxImg.alt = item.title;
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "Studio Shot";
       lightboxImg.onload = () => {
         lightboxImg.style.opacity = "1";
       };
     }
-    if (lightboxCaption) lightboxCaption.textContent = item.title;
-    if (lightboxTag) lightboxTag.textContent = item.category;
-    if (lightboxCounter) lightboxCounter.textContent = `Photo ${currentImageIndex + 1} of ${GYM_CONFIG.gallery.length}`;
+    if (lightboxCaption && title) lightboxCaption.textContent = title.textContent;
+    if (lightboxTag && subtitle) lightboxTag.textContent = subtitle.textContent;
+    if (lightboxCounter) lightboxCounter.textContent = `Photo ${currentImageIndex + 1} of ${items.length}`;
   };
 
   const openLightbox = (index) => {
