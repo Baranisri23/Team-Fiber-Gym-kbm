@@ -247,6 +247,18 @@ ul {
   transform: translateY(-2px);
 }
 
+.btn-maps {
+  background: #1a73e8;
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(26, 115, 232, 0.35);
+}
+
+.btn-maps:hover {
+  background: #1557b0;
+  box-shadow: 0 6px 25px rgba(26, 115, 232, 0.55);
+  transform: translateY(-2px);
+}
+
 .btn-whatsapp {
   background: #25d366;
   color: #ffffff;
@@ -1348,17 +1360,17 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(10, 11, 14, 0.92) 0%, rgba(10, 11, 14, 0.3) 55%, transparent 100%);
+  background: linear-gradient(to top, rgba(10, 11, 14, 0.95) 0%, rgba(10, 11, 14, 0.5) 45%, rgba(10, 11, 14, 0.1) 70%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 1.5rem;
-  opacity: 0;
+  opacity: 1;
   transition: var(--transition-normal);
 }
 
 .gallery-item:hover .gallery-overlay {
-  opacity: 1;
+  background: linear-gradient(to top, rgba(10, 11, 14, 0.98) 0%, rgba(10, 11, 14, 0.65) 50%, rgba(10, 11, 14, 0.2) 75%, transparent 100%);
 }
 
 .gallery-zoom-icon {
@@ -1375,11 +1387,13 @@ ul {
   align-items: center;
   justify-content: center;
   color: #fff;
+  opacity: 0;
   transform: scale(0.7);
   transition: var(--transition-fast);
 }
 
 .gallery-item:hover .gallery-zoom-icon {
+  opacity: 1;
   transform: scale(1);
 }
 
@@ -1389,6 +1403,8 @@ ul {
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .gallery-subtitle {
@@ -1396,6 +1412,8 @@ ul {
   color: var(--accent-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* Lightbox Modal */
@@ -1605,6 +1623,26 @@ ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  transition: opacity 0.2s ease;
+}
+
+.testimonials-grid.refreshing {
+  opacity: 0.25;
+}
+
+@keyframes reviewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-card.review-anim {
+  animation: reviewFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .testimonial-card {
@@ -1894,6 +1932,91 @@ ul {
 .form-textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+/* Phone Input Group with +91 Country Code */
+.phone-input-group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  overflow: hidden;
+}
+
+.phone-input-group:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(255, 208, 0, 0.2);
+}
+
+.phone-input-group.invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25) !important;
+}
+
+.phone-prefix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-right: 1px solid var(--border-subtle);
+  color: var(--accent-secondary);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.phone-input-group .phone-input {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0;
+  padding: 0.9rem 1rem;
+  flex: 1;
+  outline: none;
+  color: var(--text-white);
+  font-size: 0.95rem;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+.phone-input-group .phone-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.phone-hint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.phone-digit-count {
+  font-weight: 700;
+  color: var(--accent-secondary);
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+}
+
+.phone-error-msg {
+  display: none;
+  font-size: 0.8rem;
+  color: #f87171;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+.phone-error-msg.visible {
+  display: block;
 }
 
 .form-hint {
