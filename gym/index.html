@@ -674,7 +674,10 @@
         </svg>
       </button>
       <div class="lightbox-content">
-        <img src="" alt="Enlarged Gallery Shot" class="lightbox-img" id="lightboxImg">
+        <div class="lightbox-img-wrapper">
+          <img src="" alt="Enlarged Gallery Shot" class="lightbox-img" id="lightboxImg" draggable="false">
+          <div class="lightbox-shield" title="Protected Studio Image"></div>
+        </div>
         <div class="lightbox-caption" id="lightboxCaption"></div>
       </div>
       <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next Image">
@@ -731,13 +734,20 @@
         <div class="testimonials-grid" id="testimonialsGrid">
           <!-- Google Review 1 -->
           <div class="testimonial-card reveal">
-            <div class="testimonial-card-top">
-              <div class="testimonial-rating">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            <div class="testimonial-card-header">
+              <div class="testimonial-author">
+                <div class="author-avatar">SR</div>
+                <div class="author-info">
+                  <div class="author-title-row">
+                    <h4>Sarmy Raja Kumar</h4>
+                    <span class="author-verified-badge" title="Verified Google Reviewer">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <p>Google Verified Review • 5 Stars</p>
+                </div>
               </div>
               <span class="google-review-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24">
@@ -748,35 +758,35 @@
                 </svg>
                 Google Review
               </span>
+            </div>
+            <div class="testimonial-rating">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
             </div>
             <p class="testimonial-text">
               "Trainer Ram provides excellent workout sessions and constantly pushes members to achieve their fitness goals easily. Very supportive, knowledgeable coaching with complete focus on form, posture, and progressive overload. Easily the best gym in Kelambakkam!"
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">SR</div>
-              <div class="author-info">
-                <div class="author-title-row">
-                  <h4>Sarmy Raja Kumar</h4>
-                  <span class="author-verified-badge" title="Verified Google Reviewer">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                  </span>
-                </div>
-                <p>Google Verified Review • 5 Stars</p>
-              </div>
-            </div>
           </div>
 
           <!-- Google Review 2 -->
           <div class="testimonial-card reveal">
-            <div class="testimonial-card-top">
-              <div class="testimonial-rating">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            <div class="testimonial-card-header">
+              <div class="testimonial-author">
+                <div class="author-avatar">VK</div>
+                <div class="author-info">
+                  <div class="author-title-row">
+                    <h4>Venkatesh (Venky)</h4>
+                    <span class="author-verified-badge" title="Verified Google Reviewer">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <p>Google Verified Review • 5 Stars</p>
+                </div>
               </div>
               <span class="google-review-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24">
@@ -787,35 +797,35 @@
                 </svg>
                 Google Review
               </span>
+            </div>
+            <div class="testimonial-rating">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
             </div>
             <p class="testimonial-text">
               "The gym creates an amazing sense of community and positivity, making members feel genuinely welcomed every single day. Friendly staff, inspiring crowd, and very supportive trainers who are always ready to guide you through workouts."
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">VK</div>
-              <div class="author-info">
-                <div class="author-title-row">
-                  <h4>Venkatesh (Venky)</h4>
-                  <span class="author-verified-badge" title="Verified Google Reviewer">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                  </span>
-                </div>
-                <p>Google Verified Review • 5 Stars</p>
-              </div>
-            </div>
           </div>
 
           <!-- Google Review 3 -->
           <div class="testimonial-card reveal">
-            <div class="testimonial-card-top">
-              <div class="testimonial-rating">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            <div class="testimonial-card-header">
+              <div class="testimonial-author">
+                <div class="author-avatar">SK</div>
+                <div class="author-info">
+                  <div class="author-title-row">
+                    <h4>Srinivasan K.</h4>
+                    <span class="author-verified-badge" title="Verified Google Reviewer">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <p>Google Verified Review • 5 Stars</p>
+                </div>
               </div>
               <span class="google-review-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24">
@@ -826,35 +836,35 @@
                 </svg>
                 Google Review
               </span>
+            </div>
+            <div class="testimonial-rating">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
             </div>
             <p class="testimonial-text">
               "The facility is super clean, spacious, and well-maintained with modern equipment. Great range of machines for chest, back, and legs plus a heavy free-weights zone. Value for money membership fees right on OMR Kelambakkam."
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">SK</div>
-              <div class="author-info">
-                <div class="author-title-row">
-                  <h4>Srinivasan K.</h4>
-                  <span class="author-verified-badge" title="Verified Google Reviewer">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                  </span>
-                </div>
-                <p>Google Verified Review • 5 Stars</p>
-              </div>
-            </div>
           </div>
 
           <!-- Google Review 4 -->
           <div class="testimonial-card reveal">
-            <div class="testimonial-card-top">
-              <div class="testimonial-rating">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            <div class="testimonial-card-header">
+              <div class="testimonial-author">
+                <div class="author-avatar">GM</div>
+                <div class="author-info">
+                  <div class="author-title-row">
+                    <h4>Ganesan M.</h4>
+                    <span class="author-verified-badge" title="Verified Google Reviewer">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <p>Google Verified Review • 5 Stars</p>
+                </div>
               </div>
               <span class="google-review-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24">
@@ -866,23 +876,16 @@
                 Google Review
               </span>
             </div>
+            <div class="testimonial-rating">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+            </div>
             <p class="testimonial-text">
               "The trainers are supportive, knowledgeable, and tailor workouts specifically to individual fitness levels. There is a wide range of activities available including cardio, strength, and CrossFit. Highly recommend Team Fiber!"
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">GM</div>
-              <div class="author-info">
-                <div class="author-title-row">
-                  <h4>Ganesan M.</h4>
-                  <span class="author-verified-badge" title="Verified Google Reviewer">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                  </span>
-                </div>
-                <p>Google Verified Review • 5 Stars</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -1076,12 +1079,18 @@
             authentic physical transformations.
           </p>
           <div class="social-links">
-            <a href="https://www.instagram.com/teamfiber_kelambakkam/" target="_blank" rel="noopener noreferrer" class="social-icon"
+            <a href="https://www.instagram.com/teamfiber_kelambakkam/" target="_blank" rel="noopener noreferrer" class="social-icon instagram"
               aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://wa.me/918754955844" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp"
+              aria-label="WhatsApp" data-action="whatsapp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
               </svg>
             </a>
           </div>

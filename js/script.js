@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTestimonials();
   initEnquiryForm();
   initActionButtons();
+  initContentProtection();
 });
 
 /* ==========================================================================
@@ -362,7 +363,7 @@ function initLightbox() {
   });
 
   lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox || e.target.classList.contains("lightbox-content")) {
+    if (e.target === lightbox || e.target.classList.contains("lightbox-content") || e.target.classList.contains("lightbox-shield")) {
       closeLightbox();
     }
   });
@@ -629,28 +630,101 @@ function initTestimonials() {
 
   grid.innerHTML = selectedReviews.map((r, idx) => `
     <div class="testimonial-card revealed" style="animation-delay: ${idx * 0.08}s">
-      <div class="testimonial-card-top">
-        <div class="testimonial-rating">
-          ${starSvg.repeat(r.rating || 5)}
+      <div class="testimonial-card-header">
+        <div class="testimonial-author">
+          <div class="author-avatar">${r.avatar}</div>
+          <div class="author-info">
+            <div class="author-title-row">
+              <h4>${r.name}</h4>
+              <span class="author-verified-badge" title="Verified Google Reviewer">
+                ${verifiedBadgeSvg}
+              </span>
+            </div>
+            <p>Google Verified Review • 5 Stars</p>
+          </div>
         </div>
         <span class="google-review-badge">
           ${googleLogoSvg}
           Google Review
         </span>
       </div>
-      <p class="testimonial-text">"${r.text}"</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">${r.avatar}</div>
-        <div class="author-info">
-          <div class="author-title-row">
-            <h4>${r.name}</h4>
-            <span class="author-verified-badge" title="Verified Google Reviewer">
-              ${verifiedBadgeSvg}
-            </span>
-          </div>
-          <p>Google Verified Review • 5 Stars</p>
-        </div>
+      <div class="testimonial-rating">
+        ${starSvg.repeat(r.rating || 5)}
       </div>
+      <p class="testimonial-text">"${r.text}"</p>
     </div>
   `).join("");
+}
+
+/* ==========================================================================
+   10. CONTENT COPY & IMAGE DOWNLOAD PROTECTION
+   ========================================================================== */
+function initContentProtection() {
+  const isFormInput = (target) => {
+    return target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA");
+  };
+
+  // Enforce draggable=false and contextmenu prevention on all current and future images
+  const protectImages = () => {
+    document.querySelectorAll("img").forEach((img) => {
+      img.setAttribute("draggable", "false");
+      img.setAttribute("oncontextmenu", "return false;");
+    });
+  };
+  protectImages();
+
+  // Prevent right-click context menu across the page except in form inputs
+  document.addEventListener("contextmenu", (e) => {
+    if (!isFormInput(e.target)) {
+      e.preventDefault();
+      const isImg = e.target.tagName === "IMG" || e.target.closest(".gallery-item") || e.target.closest(".lightbox") || (e.target.classList && e.target.classList.contains("lightbox-shield"));
+      if (isImg) {
+        showToast("Image saving and downloading is protected.", "warning");
+      }
+    }
+  });
+
+  // Prevent copying page content
+  document.addEventListener("copy", (e) => {
+    if (!isFormInput(e.target)) {
+      e.preventDefault();
+      showToast("Content copying is protected on this website.", "warning");
+    }
+  });
+
+  // Prevent cutting page content
+  document.addEventListener("cut", (e) => {
+    if (!isFormInput(e.target)) {
+      e.preventDefault();
+    }
+  });
+
+  // Prevent dragging images and text
+  document.addEventListener("dragstart", (e) => {
+    if (!isFormInput(e.target)) {
+      e.preventDefault();
+      if (e.target.tagName === "IMG" || e.target.closest(".gallery-item") || e.target.closest(".lightbox")) {
+        showToast("Image downloading is disabled.", "warning");
+      }
+    }
+  });
+
+  // Prevent copy/save/print keyboard shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+P, Ctrl+A)
+  document.addEventListener("keydown", (e) => {
+    if (isFormInput(e.target)) return;
+
+    if (e.ctrlKey || e.metaKey) {
+      const key = e.key.toLowerCase();
+      if (key === "c" || key === "u" || key === "s" || key === "a" || key === "p") {
+        e.preventDefault();
+        if (key === "s") {
+          showToast("Image and page downloading is protected.", "warning");
+        } else if (key === "p") {
+          showToast("Printing and saving studio photos is restricted.", "warning");
+        } else if (key === "c") {
+          showToast("Content copying is protected on this website.", "warning");
+        }
+      }
+    }
+  });
 }
